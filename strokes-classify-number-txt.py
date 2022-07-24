@@ -1,4 +1,5 @@
 import xlrd
+import os
 
 f = open("3755.txt", "r")  # 汉字序号文件
 lines = f.readlines()
@@ -17,6 +18,8 @@ for line in lines:
             k = k + 1
 
     print(k)  # 汉字笔画数
+    
+    os.makedirs("/home/hanrufeng/datause/strokes-classify-number/", exist_ok=True)
     with open('/home/hanrufeng/datause/strokes-classify-number/' + str(k) + '.txt', 'a', encoding='utf-8') as f:
         f.write(h + '\n')
 
